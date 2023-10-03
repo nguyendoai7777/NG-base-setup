@@ -7,6 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
+    "noImplicitAny": false,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,10 +20,19 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "paths": {
+      "@pages/*": ["src/app/ui/pages/*"],
+      "@components/*": ["src/app/ui/components/*"],
+      "@layouts/*": ["src/app/ui/layouts/*"],
+      "@config/*": ["src/app/common/config/*"],
+      "@services/*": ["src/app/common/services/*"],
+      "@constants/*": ["src/app/common/constants/*"],
+      "@utils/*": ["src/app/common/utils/*"],
+      "@model/*": ["src/app/common/model/*"],
+      "@guard/*": ["src/app/common/guard/*"],
+      "@directives/*": ["src/app/common/directives/*"]
+    },
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

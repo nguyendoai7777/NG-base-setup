@@ -1,7 +1,9 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app/app.component';
+import { AppConfig } from '@config/config.interface';
 
-import { AppModule } from './app/app.module';
-
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+(async () => {
+  const config: AppConfig = await fetch(
+    'assets/config/environment.config.json'
+  ).then((r) => r.json());
+  void AppComponent.boostrap(config);
+})();

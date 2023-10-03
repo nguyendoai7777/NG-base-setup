@@ -1,0 +1,70 @@
+.box {
+  width: clamp(150px, 75%, 650px);
+  background-color: darkblue;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__items {
+  position: relative;
+  background-color: #2d2c41;
+  text-align: center;
+}
+
+.nav__item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav__item__link {
+  position: relative;
+  display: block;
+  color: #d9d9d9;
+  padding: 20px;
+  z-index: 2;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: #2d2c41;
+  transition: background-color 250ms ease;
+
+  &:hover,
+  &:focus {
+    background-color: #4b4a5e;
+    color: #fff;
+  }
+}
+
+.nav__item__drop {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-20px);
+  height: 1px;
+  min-width: 100%;
+  transition: transform 0.2s ease-in-out, opacity 0.1s ease-out;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #2d2c41;
+  border: 1px solid #333;
+  border-top: 0;
+
+  .nav__item__link {
+    padding: 12px 20px;
+    white-space: nowrap;
+  }
+}
+
+.nav__item__link:focus + .nav__item__drop,
+.nav__item:hover .nav__item__drop,
+.nav__item__drop:focus-within {
+  opacity: 1;
+  transform: translateY(0px);
+  height: auto;
+  z-index: 1;
+}

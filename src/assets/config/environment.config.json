@@ -1,0 +1,10 @@
+{
+  "appConfig": {
+    "prod": {
+      "apiUrl": "http://prod.com/"
+    },
+    "staging": {
+      "apiUrl": "http://dev.com/"
+    }
+  }
+}
